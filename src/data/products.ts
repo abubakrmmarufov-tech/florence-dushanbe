@@ -144,9 +144,9 @@ export const PRODUCTS: Product[] = [
     price: 980,
     isBestseller: true,
     images: [
-      'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=85',
       'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1200&q=85',
     ],
     shortDescription: 'Фирменная бархатная коробка Florence с роскошной шапкой из пионов, садовых роз и орхидей фаленопсис.',
     fullDescription: 'Безупречное решение для тех, кто ценит удобство: цветам не нужна ваза, композиция собрана на специальном оазисе со свежей питательной водой. Бархатная коробка благородного хвойно-изумрудного цвета с золотым логотипом Florence украсит любой интерьер.',
@@ -173,9 +173,9 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Розы',
     price: 590,
     images: [
-      'https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1521509650059-e931e9c20a4b?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85',
       'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&q=85',
     ],
     shortDescription: 'Чистота линий, элегантность и грация. Букет для самых трепетных и искренних признаний.',
     fullDescription: 'Классическое сочетание премиальных белых роз сорта Mondial и белоснежной махровой эустомы. Непринужденный европейский шик, вдохновленный парижскими цветочными ателье.',

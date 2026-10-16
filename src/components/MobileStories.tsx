@@ -33,7 +33,7 @@ const STORIES: StoryItem[] = [
   {
     id: 'compositions',
     categoryId: 'compositions',
-    title: 'В коробках',
+    title: 'Шляпные боксы',
     image: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=300&q=80',
   },
   {
@@ -60,8 +60,8 @@ export const MobileStories: React.FC<MobileStoriesProps> = ({
   onSelectCategory,
 }) => {
   return (
-    <div className="lg:hidden bg-cream-50 pt-2 pb-4 border-b border-cream-200">
-      <div className="flex items-center gap-3.5 overflow-x-auto px-4 scrollbar-none overscroll-x-contain py-1">
+    <div className="lg:hidden bg-[#FAF8F5] pt-2 pb-3 border-b border-cream-200/90 w-full max-w-full overflow-hidden">
+      <div className="flex items-center gap-3 overflow-x-auto px-4 scrollbar-none overscroll-x-contain w-full py-0.5">
         {STORIES.map((story) => {
           const isActive = activeCategory === story.categoryId;
 
@@ -73,20 +73,20 @@ export const MobileStories: React.FC<MobileStoriesProps> = ({
                 const el = document.getElementById('catalog');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="flex flex-col items-center flex-shrink-0 group focus:outline-none"
+              className="flex flex-col items-center flex-shrink-0 group focus:outline-none w-[64px]"
             >
               {/* Circular Avatar with Luxury Ring */}
               <div className="relative">
                 <div
-                  className={`w-16 h-16 rounded-full p-0.5 transition-all duration-300 ${
+                  className={`w-14 h-14 rounded-full p-0.5 transition-all duration-300 ${
                     isActive
-                      ? 'ring-2 ring-florence-700 ring-offset-2 bg-gradient-to-tr from-gold-500 to-florence-700'
-                      : 'ring-1 ring-cream-300 hover:ring-gold-500'
+                      ? 'ring-2 ring-florence-800 ring-offset-2 ring-offset-[#FAF8F5] bg-gradient-to-tr from-gold-500 to-florence-800'
+                      : 'ring-1 ring-cream-300 group-hover:ring-gold-500'
                   }`}
                 >
                   <div className="w-full h-full rounded-full overflow-hidden bg-cream-100">
                     <img
-                      src={getOptimizedImageUrl(story.image, 160, 65)}
+                      src={getOptimizedImageUrl(story.image, 120, 70)}
                       alt={story.title}
                       className="w-full h-full object-cover transform group-active:scale-95 transition-transform"
                       loading="eager"
@@ -94,18 +94,12 @@ export const MobileStories: React.FC<MobileStoriesProps> = ({
                     />
                   </div>
                 </div>
-
-                {story.badge && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 px-1.5 py-0.2 bg-florence-900 text-gold-300 text-[9px] font-semibold uppercase tracking-wider rounded-full shadow-xs whitespace-nowrap">
-                    {story.badge}
-                  </span>
-                )}
               </div>
 
               {/* Title label */}
               <span
-                className={`text-[11px] mt-1.5 font-medium tracking-tight text-center truncate max-w-[70px] ${
-                  isActive ? 'text-florence-900 font-semibold' : 'text-charcoal-700'
+                className={`text-[10px] mt-1.5 font-medium tracking-tight text-center truncate w-full ${
+                  isActive ? 'text-florence-900 font-bold' : 'text-charcoal-700'
                 }`}
               >
                 {story.title}

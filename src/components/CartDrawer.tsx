@@ -72,9 +72,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           </button>
         </div>
 
-        {/* Prototype demo note */}
-        <div className="bg-florence-50 px-4 py-2 text-[11px] text-florence-900 border-b border-florence-100">
-          Демонстрационный заказ: вы можете отправить список букетов сразу в WhatsApp или Instagram бутика Florence.
+        {/* Concierge Delivery Assurance */}
+        <div className="bg-florence-50/80 px-4 py-2.5 text-[11px] text-florence-900 border-b border-florence-100/80 flex items-center justify-between font-medium">
+          <span>Доставка по г. Душанбе от 60 минут</span>
+          <span className="text-florence-800">Фотоотчет до выезда</span>
         </div>
 
         {/* Item list */}
@@ -164,9 +165,15 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <span className="text-xs uppercase tracking-luxury text-charcoal-600 font-medium">
                 Итого к оплате:
               </span>
-              <span className="font-serif text-2xl font-bold text-florence-900">
-                {totalPrice} <span className="text-sm font-sans font-normal text-charcoal-700">сомони (TJS)</span>
+              <span className="font-serif text-2xl font-bold text-florence-900 tabular-nums">
+                {totalPrice} <span className="text-sm font-sans font-normal text-charcoal-700">TJS</span>
               </span>
+            </div>
+
+            {/* Payment & Concierge Info */}
+            <div className="bg-cream-100/60 p-2.5 rounded-lg border border-cream-200/80 text-[10px] text-charcoal-600 space-y-0.5">
+              <div className="font-semibold text-charcoal-800">Способы оплаты:</div>
+              <div>Корти Милли • Alif Mobile • DC City • перевод или курьеру</div>
             </div>
 
             <div className="space-y-2">
@@ -174,7 +181,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 href={`${STORE_INFO.whatsappUrl}${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3.5 bg-emerald-700 hover:bg-emerald-600 text-white rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-md"
+                className="w-full flex items-center justify-center gap-2 py-3.5 bg-emerald-700 hover:bg-emerald-600 text-white rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-md active:scale-98"
               >
                 <Phone className="w-4 h-4" />
                 <span>Заказать через WhatsApp</span>
@@ -184,7 +191,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 href={STORE_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3.5 bg-florence-800 hover:bg-florence-700 text-cream-50 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-md"
+                className="w-full flex items-center justify-center gap-2 py-3.5 bg-florence-800 hover:bg-florence-700 text-cream-50 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow-md active:scale-98"
               >
                 <InstagramIcon className="w-4 h-4 text-gold-400" />
                 <span>Заказать через Instagram</span>

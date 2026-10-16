@@ -44,11 +44,11 @@ export const InstagramFeed: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-12">
           <div>
-            <span className="text-[11px] uppercase tracking-luxury text-florence-700 font-medium block mb-1">
-              Следите за нашими историями
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-florence-800 font-semibold block mb-1">
+              ГАЛЕРЕЯ АТЕЛЬЕ
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-florence-900 font-light">
-              Жизнь бутика в Instagram
+            <h2 className="font-serif text-2xl sm:text-4xl text-florence-900 font-light text-balance">
+              Кадры из жизни бутика в Душанбе
             </h2>
           </div>
 

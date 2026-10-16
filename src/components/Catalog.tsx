@@ -74,24 +74,17 @@ export const Catalog: React.FC<CatalogProps> = ({
         
         {/* Header & Title */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream-200/60 text-charcoal-700 text-[10px] sm:text-xs uppercase tracking-luxury mb-2 font-medium">
-            <Sparkles className="w-3.5 h-3.5 text-gold-600" />
-            <span>Коллекция букетов 2026</span>
-          </div>
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-florence-800 font-semibold block mb-2">
+            КОЛЛЕКЦИЯ FLORENCE DUSHANBE
+          </span>
 
-          <h2 className="font-serif text-2xl sm:text-5xl text-florence-900 font-light tracking-tight">
-            Каталог букетов & композиций
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-florence-900 font-light tracking-tight text-balance">
+            Авторские букеты & садовые композиции
           </h2>
-          <div className="w-12 sm:w-16 h-0.5 bg-florence-700 mx-auto mt-2 sm:mt-3 mb-2 sm:mb-3" />
-          <p className="text-[11px] sm:text-sm text-charcoal-600 font-light max-w-xl mx-auto px-2">
-            Каждый букет создается вручную флористами Florence из свежих цветов премиального импорта.
+          <div className="w-12 sm:w-16 h-0.5 bg-gold-500/80 mx-auto mt-2 sm:mt-3 mb-2 sm:mb-3" />
+          <p className="text-[11px] sm:text-sm text-charcoal-600 font-light max-w-xl mx-auto px-2 text-pretty">
+            Прямые авиапоставки роз O’Hara, голландских пионов и гортензий. Собираем индивидуально в день вручения.
           </p>
-
-          {/* Prototype Price Disclaimer Notice */}
-          <div className="mt-2.5 mx-1 inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-200/70 rounded-full text-amber-900 text-[10px] sm:text-[11px]">
-            <Info className="w-3.5 h-3.5 flex-shrink-0 text-amber-700" />
-            <span>Демонстрационный прототип для Jomi Studio • Цены иллюстративные (TJS)</span>
-          </div>
         </div>
 
         {/* Occasion Active Indicator */}
@@ -110,10 +103,10 @@ export const Catalog: React.FC<CatalogProps> = ({
         )}
 
         {/* Filter & Sorting Controls */}
-        <div className="flex flex-col gap-2.5 sm:gap-3 pb-4 sm:pb-6 border-b border-cream-200">
+        <div className="flex flex-col gap-2.5 sm:gap-3 pb-4 sm:pb-6 border-b border-cream-200 w-full max-w-full overflow-hidden">
           
           {/* Category Horizontal Scroll Pills */}
-          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none overscroll-x-contain -mx-3 px-3 sm:mx-0 sm:px-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none overscroll-x-contain w-full px-0.5">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -203,7 +196,7 @@ export const Catalog: React.FC<CatalogProps> = ({
                 : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6'
             }`}
           >
-            {filteredProducts.map((product) => {
+            {filteredProducts.map((product, idx) => {
               const isFav = favorites.includes(product.id);
 
               return (
@@ -218,7 +211,7 @@ export const Catalog: React.FC<CatalogProps> = ({
                       src={getOptimizedImageUrl(product.images[0], 440, 68)}
                       alt={product.name}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
-                      loading="lazy"
+                      loading={idx < 4 ? 'eager' : 'lazy'}
                       decoding="async"
                       onError={(e) => {
                         const target = e.currentTarget;
@@ -231,25 +224,6 @@ export const Catalog: React.FC<CatalogProps> = ({
 
                     {/* Subtle Outline */}
                     <div className="absolute inset-0 ring-1 ring-inset ring-black/5 pointer-events-none" />
-
-                    {/* Badges Overlay */}
-                    <div className="absolute top-1.5 left-1.5 sm:top-2.5 sm:left-2.5 flex flex-col gap-1 z-10">
-                      {product.isBestseller && (
-                        <span className="px-1.5 py-0.5 rounded-full bg-florence-900/90 text-cream-50 text-[8px] sm:text-[10px] font-semibold tracking-wider uppercase backdrop-blur-xs shadow-xs">
-                          Хит
-                        </span>
-                      )}
-                      {product.isSeasonal && (
-                        <span className="px-1.5 py-0.5 rounded-full bg-gold-600/90 text-cream-50 text-[8px] sm:text-[10px] font-semibold tracking-wider uppercase backdrop-blur-xs shadow-xs">
-                          Сезон
-                        </span>
-                      )}
-                      {product.isNew && (
-                        <span className="px-1.5 py-0.5 rounded-full bg-emerald-700/90 text-cream-50 text-[8px] sm:text-[10px] font-semibold tracking-wider uppercase backdrop-blur-xs shadow-xs">
-                          New
-                        </span>
-                      )}
-                    </div>
 
                     {/* Favorite Heart (Touch Target min 44px) */}
                     <button
@@ -288,7 +262,7 @@ export const Catalog: React.FC<CatalogProps> = ({
                     {/* Price and Cart Quick Button */}
                     <div className="mt-2 pt-2 border-t border-cream-100 flex items-center justify-between">
                       <div>
-                        <span className="font-serif text-sm sm:text-xl font-bold text-florence-900 block leading-tight">
+                        <span className="font-serif text-sm sm:text-xl font-bold text-florence-900 block leading-tight tabular-nums">
                           {product.price} <span className="text-[10px] sm:text-xs font-sans font-normal text-charcoal-700">TJS</span>
                         </span>
                         {product.originalPrice && (

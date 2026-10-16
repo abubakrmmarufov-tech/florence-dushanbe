@@ -194,7 +194,10 @@ export function App() {
       {/* Product Detail Modal (Bottom Sheet on phone) */}
       <ProductDetailModal
         product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
+        onClose={() => {
+          setSelectedProduct(null);
+          document.body.style.overflow = '';
+        }}
         onAddToCart={handleAddToCart}
         isFavorite={selectedProduct ? favorites.includes(selectedProduct.id) : false}
         onToggleFavorite={handleToggleFavorite}
@@ -203,7 +206,10 @@ export function App() {
       {/* Slide-over Cart Drawer */}
       <CartDrawer
         isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
+        onClose={() => {
+          setIsCartOpen(false);
+          document.body.style.overflow = '';
+        }}
         items={cartItems}
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}

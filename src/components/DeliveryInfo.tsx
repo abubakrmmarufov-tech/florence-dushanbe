@@ -35,43 +35,45 @@ export const DeliveryInfo: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-[11px] uppercase tracking-luxury text-florence-700 font-semibold block mb-2">
-            Безупречный сервис в Душанбе
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-florence-800 font-semibold block mb-2">
+            КОНСЬЕРЖ-СЕРВИС FLORENCE
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-florence-900 font-light">
-            Как работает доставка Florence
+          <h2 className="font-serif text-2xl sm:text-4xl text-florence-900 font-light text-balance">
+            Бережная доставка по г. Душанбе
           </h2>
-          <div className="w-12 h-0.5 bg-gold-500 mx-auto mt-4 mb-4" />
-          <p className="text-xs sm:text-sm text-charcoal-600 font-light">
-            Мы позаботились о том, чтобы заказ цветов был легким, а вручение — незабываемым
+          <div className="w-12 h-0.5 bg-gold-500/80 mx-auto mt-3 mb-3" />
+          <p className="text-xs sm:text-sm text-charcoal-600 font-light text-pretty">
+            Каждый букет доставляется на автомобиле с кондиционером в специальном аквапаке — цветы сохраняют идеальную свежесть.
           </p>
         </div>
 
         {/* 4 Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
               <div
                 key={idx}
-                className="bg-white p-7 rounded-xl border border-cream-200 shadow-xs hover:shadow-lg transition-all duration-300 relative group"
+                className="bg-white p-5 sm:p-7 rounded-2xl border border-cream-200/90 shadow-2xs hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-florence-50 flex items-center justify-center text-florence-800 group-hover:bg-florence-800 group-hover:text-cream-50 transition-colors">
-                    <Icon className="w-6 h-6" />
+                <div>
+                  <div className="flex items-center justify-between mb-4 sm:mb-6">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-florence-50 flex items-center justify-center text-florence-800 group-hover:bg-florence-800 group-hover:text-cream-50 transition-colors">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span className="font-serif text-2xl sm:text-3xl font-light text-gold-500/80">
+                      {step.number}
+                    </span>
                   </div>
-                  <span className="font-serif text-3xl font-light text-cream-300 group-hover:text-gold-500 transition-colors">
-                    {step.number}
-                  </span>
-                </div>
 
-                <h3 className="font-serif text-lg font-normal text-florence-900 mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-charcoal-600 font-light leading-relaxed">
-                  {step.desc}
-                </p>
+                  <h3 className="font-serif text-base sm:text-lg font-normal text-florence-900 mb-1.5">
+                    {step.title}
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-charcoal-600 font-light leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
               </div>
             );
           })}

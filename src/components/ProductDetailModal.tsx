@@ -37,10 +37,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
   // Safe lock background scroll on mobile without breaking momentum
   useEffect(() => {
-    const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
-      document.body.style.overflow = originalOverflow || '';
+      document.body.style.overflow = '';
     };
   }, []);
 
@@ -76,12 +75,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-hidden bg-black/60 backdrop-blur-xs flex items-end md:items-center justify-center p-0 md:p-6 animate-fade-in"
+      className="fixed inset-0 z-50 overflow-hidden bg-black/60 backdrop-blur-xs flex items-end md:items-center justify-center p-0 md:p-6 animate-fade-in w-full max-w-full"
       onClick={onClose}
     >
       {/* Modal / Bottom Sheet Container */}
       <div
-        className="relative bg-cream-50 w-full max-w-4xl rounded-t-3xl md:rounded-2xl shadow-2xl overflow-hidden border-t md:border border-cream-200 h-[82vh] md:h-auto md:max-h-[88vh] flex flex-col"
+        className="relative bg-cream-50 w-full max-w-4xl rounded-t-3xl md:rounded-2xl shadow-2xl overflow-hidden border-t md:border border-cream-200 h-[84vh] md:h-auto md:max-h-[88vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Mobile iOS Drag Handle Indicator */}
@@ -300,8 +299,19 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                         </li>
                       ))}
                     </ul>
-                    <div className="pt-1.5 text-[10px] text-charcoal-500 border-t border-cream-100">
-                      Габариты: {product.dimensions}
+                    <div className="pt-2 text-[10px] text-charcoal-500 border-t border-cream-100 flex items-center justify-between">
+                      <span>Габариты: {product.dimensions}</span>
+                      <span className="text-florence-800 font-medium">Аквапак с водой в комплекте</span>
+                    </div>
+                  </div>
+
+                  {/* Boutique Care & Delivery Promise */}
+                  <div className="p-2.5 bg-florence-50/70 rounded-xl border border-florence-200/60 text-[11px] text-charcoal-700 space-y-1">
+                    <div className="font-semibold text-florence-900 text-[10px] uppercase tracking-wider">Сервис Florence Dushanbe:</div>
+                    <div className="text-charcoal-600 text-[10px] leading-relaxed">
+                      • Фото и видео готового букета в WhatsApp перед выездом курьера<br />
+                      • Авторская открытка с вашим текстом и питательный состав Chrysal<br />
+                      • Оплата: Корти Милли, Alif Mobile, DC City, перевод или наличными
                     </div>
                   </div>
                 </div>

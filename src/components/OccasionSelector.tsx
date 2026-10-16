@@ -43,21 +43,21 @@ export const OccasionSelector: React.FC<OccasionSelectorProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-[11px] uppercase tracking-luxury text-florence-700 font-medium block mb-2">
-            Идеальный выбор для каждого события
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-florence-800 font-semibold block mb-2">
+            ПОДБОРКА ПО НАСТРОЕНИЮ
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-florence-900 font-normal">
-            Цветы по поводу
+          <h2 className="font-serif text-2xl sm:text-4xl text-florence-900 font-light text-balance">
+            Цветы для ваших особенных событий
           </h2>
-          <div className="w-12 h-0.5 bg-gold-500 mx-auto mt-4 mb-4" />
-          <p className="text-xs sm:text-sm text-charcoal-600 font-light">
-            Наши флористы подбирают палитру и характер букета специально под настроение вашего события
+          <div className="w-12 h-0.5 bg-gold-500/80 mx-auto mt-3 mb-3" />
+          <p className="text-xs sm:text-sm text-charcoal-600 font-light text-pretty">
+            Индивидуальные палитры под характер встречи: от камерных свиданий до представительских торжеств
           </p>
         </div>
 
-        {/* Occasions Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Occasions Grid: 2 cols on mobile, 4 on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {OCCASION_CARDS.map((card) => {
             const isSelected = selectedOccasion === card.tag;
 
@@ -67,7 +67,7 @@ export const OccasionSelector: React.FC<OccasionSelectorProps> = ({
                 onClick={() => {
                   onSelectOccasion(isSelected ? null : card.tag);
                 }}
-                className={`group relative h-60 sm:h-80 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 transform active:scale-[0.98] ${
+                className={`group relative aspect-[3/4] sm:aspect-auto sm:h-80 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 transform active:scale-[0.98] ${
                   isSelected ? 'ring-2 ring-florence-700 ring-offset-2' : ''
                 }`}
               >
@@ -75,29 +75,29 @@ export const OccasionSelector: React.FC<OccasionSelectorProps> = ({
                 <img
                   src={getOptimizedImageUrl(card.image, 500, 70)}
                   alt={card.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-florence-950/90 via-florence-950/40 to-transparent" />
+                {/* Refined Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-florence-950/90 via-florence-950/35 to-transparent" />
 
                 {/* Content */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end text-cream-50">
-                  <span className="text-[10px] tracking-luxury uppercase text-gold-400 font-medium mb-1">
-                    Повод
+                <div className="absolute inset-0 p-3.5 sm:p-6 flex flex-col justify-end text-cream-50">
+                  <span className="text-[8px] sm:text-[10px] tracking-luxury uppercase text-gold-400 font-medium mb-1">
+                    КОЛЛЕКЦИЯ
                   </span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-normal leading-snug group-hover:text-gold-200 transition-colors">
+                  <h3 className="font-serif text-sm sm:text-2xl font-normal leading-snug group-hover:text-gold-200 transition-colors">
                     {card.title}
                   </h3>
-                  <p className="text-xs text-cream-200/90 font-light mt-1.5 line-clamp-2">
+                  <p className="text-[10px] sm:text-xs text-cream-200/90 font-light mt-1 line-clamp-2 hidden sm:block">
                     {card.subtitle}
                   </p>
 
-                  <div className="mt-4 pt-3 border-t border-white/20 flex items-center justify-between text-xs text-gold-300 font-medium">
-                    <span>{isSelected ? 'Выбрано (показаны букеты)' : 'Смотреть подборку'}</span>
-                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                  <div className="mt-2 sm:mt-4 pt-2 sm:pt-3 border-t border-white/20 flex items-center justify-between text-[10px] sm:text-xs text-gold-300 font-medium">
+                    <span className="truncate">{isSelected ? 'Выбрано' : 'Смотреть'}</span>
+                    <span className="transform group-hover:translate-x-1 transition-transform ml-1">→</span>
                   </div>
                 </div>
               </div>

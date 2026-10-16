@@ -5,8 +5,8 @@ import { STORE_INFO } from '../data/products';
 export const BrandStory: React.FC = () => {
   return (
     <section id="about" className="py-20 sm:py-28 bg-florence-900 text-cream-50 relative overflow-hidden max-w-full">
-      {/* Background delicate glow */}
-      <div className="absolute top-1/2 left-0 -translate-x-1/4 -translate-y-1/2 w-80 h-80 rounded-full bg-florence-700/30 blur-3xl pointer-events-none max-w-full" />
+      {/* Background delicate glow safely contained */}
+      <div className="absolute top-1/4 left-0 w-72 h-72 rounded-full bg-florence-700/20 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -24,11 +24,11 @@ export const BrandStory: React.FC = () => {
 
               {/* Inset Badge */}
               <div className="absolute -bottom-6 -right-6 hidden sm:block bg-cream-50 text-charcoal-900 p-5 rounded-lg border border-cream-200 shadow-xl max-w-xs">
-                <span className="text-[10px] uppercase tracking-luxury text-florence-700 font-semibold block mb-1">
-                  Философия Florence
+                <span className="text-[10px] uppercase tracking-[0.2em] text-florence-800 font-bold block mb-1">
+                  Мастерская на Турсунзаде
                 </span>
                 <p className="font-serif text-sm italic font-normal leading-snug">
-                  «Каждый букет создается так, будто предназначается самому дорогому человеку на свете.»
+                  «Мы отбираем только стойкие сорта с глубоким ароматом и раскрытием, чтобы букет радовал больше недели.»
                 </p>
               </div>
             </div>

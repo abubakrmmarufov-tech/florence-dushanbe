@@ -115,19 +115,19 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Prototype Pitch Disclaimer & Credits */}
+        {/* Studio Credits & Local Heritage */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-cream-400 font-light">
           <div>
-            © {new Date().getFullYear()} Florence Dushanbe. Все права защищены.
+            © {new Date().getFullYear()} Florence Dushanbe • Дом авторской флористики.
           </div>
 
-          <div className="flex items-center gap-1.5 text-center text-gold-400/90">
-            <span>Интерактивный концепт-прототип разработан</span>
-            <span className="font-semibold text-cream-50 tracking-wider">JOMI STUDIO</span>
+          <div className="flex items-center gap-1.5 text-center text-cream-300">
+            <span>Цифровой бутик спроектирован в</span>
+            <span className="font-semibold text-gold-400 tracking-wider">JOMI STUDIO</span>
           </div>
 
-          <div className="text-center md:text-right text-[10px] text-cream-500">
-            Презентационная демо-версия для согласования дизайна
+          <div className="text-center md:text-right text-[10px] text-cream-400 font-light">
+            ул. Мирзо Турсунзаде, 11 • Тел: +992 000 00 11 77
           </div>
         </div>
 

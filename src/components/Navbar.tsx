@@ -22,9 +22,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [showSearch, setShowSearch] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-cream-50/95 backdrop-blur-md border-b border-cream-200 transition-all duration-300">
+    <header className="sticky top-0 z-40 bg-cream-50/95 backdrop-blur-md border-b border-cream-200 transition-all duration-300 w-full max-w-full">
       {/* Top Announcement Bar */}
-      <div className="bg-florence-900 text-cream-50 text-xs py-2 px-4 tracking-wider uppercase">
+      <div className="bg-florence-900 text-cream-50 text-xs py-2 px-3 sm:px-4 tracking-wider uppercase w-full max-w-full">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="hidden md:flex items-center space-x-6 text-[11px] text-cream-200">
             <span className="flex items-center gap-1.5">
@@ -35,8 +35,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>Ежедневно 09:00 — 23:00</span>
           </div>
 
-          <div className="w-full md:w-auto text-center font-medium tracking-luxury text-[11px] sm:text-xs text-gold-400">
-            Доставка по Душанбе за 60 минут • Фото букета перед отправкой
+          <div className="w-full md:w-auto text-center font-medium tracking-wide sm:tracking-luxury text-[10px] sm:text-xs text-gold-400 truncate">
+            Доставка по Душанбе за 60 минут • Фото перед отправкой
           </div>
 
           <div className="hidden lg:flex items-center space-x-4 text-[11px]">

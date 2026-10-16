@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Sparkles, Clock, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { STORE_INFO } from '../data/products';
+import { getOptimizedImageUrl } from '../utils/image';
 
 export const Hero: React.FC = () => {
   return (
@@ -68,9 +69,11 @@ export const Hero: React.FC = () => {
               {/* Main Image */}
               <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-cream-200">
                 <img
-                  src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1200&q=85"
+                  src={getOptimizedImageUrl('https://images.unsplash.com/photo-1561181286-d3fee7d55364', 800, 75)}
                   alt="Букет французских роз White O'Hara Florence Dushanbe"
                   className="w-full h-full object-cover object-center"
+                  loading="eager"
+                  decoding="async"
                 />
 
                 {/* Floating Badge */}

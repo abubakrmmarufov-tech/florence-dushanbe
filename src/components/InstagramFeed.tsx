@@ -1,35 +1,36 @@
 import { ArrowUpRight, Heart } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import { STORE_INFO } from '../data/products';
+import { getOptimizedImageUrl } from '../utils/image';
 
 const INSTA_POSTS = [
   {
-    image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364',
     likes: 342,
     tag: '#WhiteOHara',
   },
   {
-    image: 'https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1527061011665-3652c757a4d4',
     likes: 489,
     tag: '#CoralSunset',
   },
   {
-    image: 'https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1508610048659-a06b669e3321',
     likes: 512,
     tag: '#FlorenceBoxes',
   },
   {
-    image: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11',
     likes: 278,
     tag: '#DushanbeFlowers',
   },
   {
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1559563458-527698bf5295',
     likes: 620,
     tag: '#SarahBernhardt',
   },
   {
-    image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9',
     likes: 415,
     tag: '#BespokeBouquets',
   },
@@ -74,9 +75,11 @@ export const InstagramFeed: React.FC = () => {
               className="group relative aspect-square rounded-lg overflow-hidden bg-cream-100 shadow-xs block"
             >
               <img
-                src={post.image}
+                src={getOptimizedImageUrl(post.image, 320, 65)}
                 alt="Florence Dushanbe Instagram"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
 
               {/* Hover overlay */}

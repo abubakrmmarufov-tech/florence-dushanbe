@@ -1,5 +1,6 @@
 import React from 'react';
 import { OCCASIONS } from '../data/products';
+import { getOptimizedImageUrl } from '../utils/image';
 
 interface OccasionSelectorProps {
   selectedOccasion: string | null;
@@ -65,18 +66,18 @@ export const OccasionSelector: React.FC<OccasionSelectorProps> = ({
                 key={card.tag}
                 onClick={() => {
                   onSelectOccasion(isSelected ? null : card.tag);
-                  const el = document.getElementById('catalog');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className={`group relative h-80 rounded-lg overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 ${
+                className={`group relative h-60 sm:h-80 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 transform active:scale-[0.98] ${
                   isSelected ? 'ring-2 ring-florence-700 ring-offset-2' : ''
                 }`}
               >
                 {/* Background Image */}
                 <img
-                  src={card.image}
+                  src={getOptimizedImageUrl(card.image, 500, 70)}
                   alt={card.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Gradient Overlay */}

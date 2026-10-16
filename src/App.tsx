@@ -105,6 +105,24 @@ export function App() {
     });
   };
 
+  const handleSelectOccasion = (occasion: string | null) => {
+    setSelectedOccasion(occasion);
+    if (occasion) {
+      setTimeout(() => {
+        const el = document.getElementById('catalog');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    }
+  };
+
+  const handleSelectCategory = (category: string) => {
+    setActiveCategory(category);
+    setTimeout(() => {
+      const el = document.getElementById('catalog');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
+
   const totalCartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -130,7 +148,7 @@ export function App() {
       {/* Mobile Instagram Stories floral category circles */}
       <MobileStories
         activeCategory={activeCategory}
-        onSelectCategory={setActiveCategory}
+        onSelectCategory={handleSelectCategory}
       />
 
       {/* Main Content with bottom padding to avoid bottom-bar collision */}
@@ -140,12 +158,14 @@ export function App() {
         {/* Occasion Selector */}
         <OccasionSelector
           selectedOccasion={selectedOccasion}
-          onSelectOccasion={setSelectedOccasion}
+          onSelectOccasion={handleSelectOccasion}
         />
 
         {/* Catalog */}
         <Catalog
           products={PRODUCTS}
+          activeCategory={activeCategory}
+          onSelectCategory={handleSelectCategory}
           onSelectProduct={setSelectedProduct}
           onAddToCart={(prod) => handleAddToCart(prod)}
           favorites={favorites}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { getOptimizedImageUrl } from '../utils/image';
 
 interface StoryItem {
   id: string;
@@ -85,9 +86,11 @@ export const MobileStories: React.FC<MobileStoriesProps> = ({
                 >
                   <div className="w-full h-full rounded-full overflow-hidden bg-cream-100">
                     <img
-                      src={story.image}
+                      src={getOptimizedImageUrl(story.image, 160, 65)}
                       alt={story.title}
                       className="w-full h-full object-cover transform group-active:scale-95 transition-transform"
+                      loading="eager"
+                      decoding="async"
                     />
                   </div>
                 </div>

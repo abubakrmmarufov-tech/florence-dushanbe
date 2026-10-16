@@ -1,6 +1,7 @@
 import { X, Trash2, Phone, ShoppingBag } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import { Product, STORE_INFO } from '../data/products';
+import { getOptimizedImageUrl } from '../utils/image';
 
 export interface CartItem {
   product: Product;
@@ -101,9 +102,11 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 {/* Thumb */}
                 <div className="w-20 h-24 rounded-md overflow-hidden bg-cream-100 flex-shrink-0">
                   <img
-                    src={item.product.images[0]}
+                    src={getOptimizedImageUrl(item.product.images[0], 200, 65)}
                     alt={item.product.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
 

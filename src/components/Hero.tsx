@@ -5,10 +5,10 @@ import { getOptimizedImageUrl } from '../utils/image';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-cream-50 pt-4 pb-10 sm:pt-8 sm:pb-20">
+    <section className="relative overflow-hidden max-w-full bg-cream-50 pt-4 pb-10 sm:pt-8 sm:pb-20">
       {/* Delicate background blur */}
-      <div className="absolute top-0 right-0 -mr-32 -mt-32 w-80 h-80 rounded-full bg-florence-100/40 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -ml-28 -mb-28 w-72 h-72 rounded-full bg-gold-400/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 w-72 h-72 rounded-full bg-florence-100/40 blur-3xl pointer-events-none max-w-full" />
+      <div className="absolute bottom-0 left-0 -translate-x-1/4 translate-y-1/4 w-72 h-72 rounded-full bg-gold-400/10 blur-3xl pointer-events-none max-w-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 items-center">

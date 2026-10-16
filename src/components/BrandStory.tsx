@@ -4,9 +4,9 @@ import { STORE_INFO } from '../data/products';
 
 export const BrandStory: React.FC = () => {
   return (
-    <section id="about" className="py-20 sm:py-28 bg-florence-900 text-cream-50 relative overflow-hidden">
+    <section id="about" className="py-20 sm:py-28 bg-florence-900 text-cream-50 relative overflow-hidden max-w-full">
       {/* Background delicate glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 rounded-full bg-florence-700/30 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-x-1/4 -translate-y-1/2 w-80 h-80 rounded-full bg-florence-700/30 blur-3xl pointer-events-none max-w-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

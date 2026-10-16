@@ -99,7 +99,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         </button>
 
         {/* Scrollable Content Container */}
-        <div className="overflow-y-auto flex-1 overscroll-contain">
+        <div className="overflow-y-auto flex-1 overscroll-contain scrollbar-none">
           <div className="grid grid-cols-1 md:grid-cols-2">
             
             {/* Left Column: Image Gallery (Compact on Mobile, Editorial on Desktop) */}
@@ -197,7 +197,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             </div>
 
             {/* Right Column: Bouquet Information & Compact Buying Options */}
-            <div className="p-3.5 sm:p-6 md:p-8 flex flex-col justify-between space-y-3.5 sm:space-y-5">
+            <div className="p-3.5 sm:p-6 md:p-8 flex flex-col justify-between space-y-3.5 sm:space-y-5 pb-16 md:pb-8">
               <div>
                 {/* Category & Shop Name */}
                 <div className="flex items-center justify-between text-[10px] sm:text-xs uppercase tracking-luxury text-charcoal-500 mb-1">

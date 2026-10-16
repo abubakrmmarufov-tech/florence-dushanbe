@@ -52,23 +52,23 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Nav */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-24">
-          {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden">
+      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-24">
+          {/* Mobile Menu & Search Buttons */}
+          <div className="flex items-center lg:hidden flex-shrink-0">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-charcoal-800 hover:text-florence-800 focus:outline-none"
+              className="p-1.5 text-charcoal-800 hover:text-florence-800 focus:outline-none"
               aria-label="Открыть меню"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setShowSearch(!showSearch)}
-              className="p-2 text-charcoal-800 hover:text-florence-800 ml-1"
+              className="p-1.5 text-charcoal-800 hover:text-florence-800"
               aria-label="Поиск"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-4 h-4" />
             </button>
           </div>
 
@@ -93,19 +93,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Center Brand Logo */}
-          <div className="flex-1 lg:flex-none text-center">
+          <div className="flex-1 lg:flex-none text-center px-1 min-w-0">
             <a href="#" className="inline-block group">
-              <span className="font-brand text-2xl sm:text-3xl lg:text-4xl font-normal tracking-[0.24em] text-florence-900 group-hover:text-florence-700 transition-colors block">
+              <span className="font-brand text-xl sm:text-3xl lg:text-4xl font-normal tracking-[0.16em] sm:tracking-[0.24em] text-florence-900 group-hover:text-florence-700 transition-colors block truncate">
                 FLORENCE
               </span>
-              <span className="block text-[9px] sm:text-[10px] tracking-[0.38em] uppercase text-charcoal-500 font-sans mt-0.5">
+              <span className="block text-[8px] sm:text-[10px] tracking-[0.22em] sm:tracking-[0.38em] uppercase text-charcoal-500 font-sans">
                 DUSHANBE • FLEURS
               </span>
             </a>
           </div>
 
           {/* Right Action Icons */}
-          <div className="flex items-center space-x-3 sm:space-x-5">
+          <div className="flex items-center space-x-1 sm:space-x-5 flex-shrink-0">
             {/* Search Toggle (Desktop) */}
             <div className="hidden lg:block relative">
               {showSearch ? (
@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               href={STORE_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-florence-800 hover:text-florence-600 bg-florence-50 hover:bg-florence-100 border border-florence-200/60 rounded-full px-3 py-1.5 transition-all shadow-sm"
+              className="p-1.5 sm:px-3 sm:py-1.5 text-xs text-florence-800 hover:text-florence-600 bg-florence-50 hover:bg-florence-100 border border-florence-200/60 rounded-full transition-all shadow-xs flex items-center gap-1.5"
               title="Перейти в Instagram Florence"
             >
               <InstagramIcon className="w-4 h-4 text-florence-700" />
@@ -150,11 +150,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             {favoritesCount > 0 && (
               <a
                 href="#catalog"
-                className="relative p-2 text-charcoal-700 hover:text-rose-600 transition-colors"
+                className="relative p-1.5 sm:p-2 text-charcoal-700 hover:text-rose-600 transition-colors"
                 title="Избранные букеты"
               >
-                <Heart className="w-5 h-5 fill-rose-500 text-rose-500" />
-                <span className="absolute top-1 right-1 w-4 h-4 bg-rose-500 text-white rounded-full text-[10px] flex items-center justify-center font-bold">
+                <Heart className="w-4 h-4 sm:w-5 sm:h-5 fill-rose-500 text-rose-500" />
+                <span className="absolute top-0 right-0 sm:top-1 sm:right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-rose-500 text-white rounded-full text-[9px] sm:text-[10px] flex items-center justify-center font-bold">
                   {favoritesCount}
                 </span>
               </a>
@@ -163,12 +163,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Shopping Bag Drawer Trigger */}
             <button
               onClick={onOpenCart}
-              className="relative p-2 text-charcoal-800 hover:text-florence-700 transition-colors flex items-center"
+              className="relative p-1.5 sm:p-2 text-charcoal-800 hover:text-florence-700 transition-colors flex items-center"
               aria-label="Корзина букетов"
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-florence-700 text-cream-50 rounded-full text-[11px] font-medium flex items-center justify-center shadow-sm">
+                <span className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-4 h-4 sm:w-5 sm:h-5 bg-florence-700 text-cream-50 rounded-full text-[9px] sm:text-[11px] font-medium flex items-center justify-center shadow-xs">
                   {cartCount}
                 </span>
               )}

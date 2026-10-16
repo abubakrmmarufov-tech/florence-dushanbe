@@ -126,7 +126,7 @@ export function App() {
   const totalCartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-cream-50 flex flex-col text-charcoal-900 selection:bg-florence-800 selection:text-cream-50">
+    <div className="min-h-screen bg-cream-50 flex flex-col text-charcoal-900 selection:bg-florence-800 selection:text-cream-50 overflow-x-hidden max-w-full w-full">
       
       {/* Toast Notification */}
       {toastMessage && (
@@ -152,7 +152,7 @@ export function App() {
       />
 
       {/* Main Content with bottom padding to avoid bottom-bar collision */}
-      <main className="flex-1 pb-20 lg:pb-0">
+      <main className="flex-1 pb-20 lg:pb-0 overflow-x-hidden max-w-full w-full">
         <Hero />
 
         {/* Occasion Selector */}

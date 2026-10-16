@@ -35,16 +35,15 @@ export const DeliveryInfo: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-florence-800 font-semibold block mb-2">
-            КОНСЬЕРЖ-СЕРВИС FLORENCE
+        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-florence-800 font-medium block mb-1.5">
+            СТАНДАРТЫ ДОСТАВКИ
           </span>
           <h2 className="font-serif text-2xl sm:text-4xl text-florence-900 font-light text-balance">
             Бережная доставка по г. Душанбе
           </h2>
-          <div className="w-12 h-0.5 bg-gold-500/80 mx-auto mt-3 mb-3" />
-          <p className="text-xs sm:text-sm text-charcoal-600 font-light text-pretty">
-            Каждый букет доставляется на автомобиле с кондиционером в специальном аквапаке — цветы сохраняют идеальную свежесть.
+          <p className="text-xs sm:text-sm text-charcoal-500 font-light mt-1.5 text-pretty">
+            Каждый букет доставляется на автомобиле в аквапаке с водой и открыткой
           </p>
         </div>
 

@@ -73,17 +73,17 @@ export const Catalog: React.FC<CatalogProps> = ({
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header & Title */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12">
-          <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-florence-800 font-semibold block mb-2">
-            КОЛЛЕКЦИЯ FLORENCE DUSHANBE
-          </span>
-
-          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-florence-900 font-light tracking-tight text-balance">
-            Авторские букеты & садовые композиции
-          </h2>
-          <div className="w-12 sm:w-16 h-0.5 bg-gold-500/80 mx-auto mt-2 sm:mt-3 mb-2 sm:mb-3" />
-          <p className="text-[11px] sm:text-sm text-charcoal-600 font-light max-w-xl mx-auto px-2 text-pretty">
-            Прямые авиапоставки роз O’Hara, голландских пионов и гортензий. Собираем индивидуально в день вручения.
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-1 sm:gap-4 mb-4 sm:mb-8">
+          <div>
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-florence-800 font-medium block mb-1">
+              КАТАЛОГ БУКЕТОВ
+            </span>
+            <h2 className="font-serif text-2xl sm:text-4xl text-florence-900 font-light tracking-tight text-balance">
+              Коллекция бутика
+            </h2>
+          </div>
+          <p className="text-xs text-charcoal-500 font-light hidden sm:block max-w-xs text-right">
+            Прямые поставки роз O’Hara и пионов. Собираем в день вручения в аквапаке.
           </p>
         </div>
 
@@ -102,18 +102,40 @@ export const Catalog: React.FC<CatalogProps> = ({
           </div>
         )}
 
-        {/* Filter & Sorting Controls */}
-        <div className="flex flex-col gap-2.5 sm:gap-3 pb-4 sm:pb-6 border-b border-cream-200 w-full max-w-full overflow-hidden">
+        {/* Category Controls */}
+        <div className="flex flex-col gap-2 pb-3 sm:pb-6 border-b border-cream-200 w-full max-w-full overflow-hidden">
           
-          {/* Category Horizontal Scroll Pills */}
-          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none overscroll-x-contain w-full px-0.5">
+          {/* Mobile Categories: Visual Horizontal Pills */}
+          <div className="sm:hidden w-full overflow-hidden">
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none overscroll-x-contain w-full py-0.5">
+              {CATEGORIES.map((cat) => {
+                const isActive = activeCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => handleCategoryChange(cat.id)}
+                    className={`min-h-[36px] px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide whitespace-nowrap transition-all active:scale-95 flex-shrink-0 ${
+                      isActive
+                        ? 'bg-florence-800 text-cream-50 shadow-xs font-semibold'
+                        : 'bg-white text-charcoal-700 border border-cream-200/90'
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Desktop Category Horizontal Scroll Pills */}
+          <div className="hidden sm:flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none overscroll-x-contain w-full px-0.5">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
                 <button
                   key={cat.id}
                   onClick={() => handleCategoryChange(cat.id)}
-                  className={`min-h-[38px] px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium tracking-wide whitespace-nowrap transition-all active:scale-95 flex-shrink-0 ${
+                  className={`min-h-[38px] px-4 py-2 rounded-full text-xs font-medium tracking-wide whitespace-nowrap transition-all active:scale-95 flex-shrink-0 ${
                     isActive
                       ? 'bg-florence-800 text-cream-50 shadow-sm font-semibold'
                       : 'bg-white hover:bg-cream-100 text-charcoal-700 border border-cream-200'
@@ -225,17 +247,17 @@ export const Catalog: React.FC<CatalogProps> = ({
                     {/* Subtle Outline */}
                     <div className="absolute inset-0 ring-1 ring-inset ring-black/5 pointer-events-none" />
 
-                    {/* Favorite Heart (Touch Target min 44px) */}
+                    {/* Favorite Heart */}
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         onToggleFavorite(product.id);
                       }}
-                      className="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-2.5 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 hover:bg-white text-charcoal-700 shadow-sm flex items-center justify-center transition-transform active:scale-90 z-10"
+                      className="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-2.5 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 hover:bg-white text-charcoal-700 shadow-sm flex items-center justify-center transition-transform active:scale-90 z-10"
                       aria-label="В избранное"
                     >
                       <Heart
-                        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${
+                        className={`w-4 h-4 sm:w-4.5 sm:h-4.5 ${
                           isFav ? 'fill-rose-500 text-rose-500' : 'text-charcoal-700'
                         }`}
                       />
@@ -277,11 +299,11 @@ export const Catalog: React.FC<CatalogProps> = ({
                           e.stopPropagation();
                           onAddToCart(product);
                         }}
-                        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-cream-100 hover:bg-florence-800 hover:text-cream-50 text-florence-900 flex items-center justify-center transition-all active:scale-90 border border-cream-200"
+                        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-cream-100 hover:bg-florence-800 hover:text-cream-50 text-florence-900 flex items-center justify-center transition-all active:scale-90 border border-cream-200 shadow-2xs"
                         title="Добавить в корзину"
                         aria-label={`Добавить ${product.name} в корзину`}
                       >
-                        <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        <ShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                       </button>
                     </div>
                   </div>

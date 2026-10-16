@@ -186,7 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 placeholder="Поиск по букетам, розам, пионам..."
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
-                className="w-full bg-white border border-cream-200 rounded-lg pl-9 pr-9 py-2 text-sm text-charcoal-800 focus:outline-none focus:border-florence-600"
+                className="w-full bg-white border border-cream-200 rounded-lg pl-9 pr-9 py-2 text-base sm:text-sm text-charcoal-800 focus:outline-none focus:border-florence-600"
               />
               {searchQuery && (
                 <button

@@ -43,16 +43,15 @@ export const OccasionSelector: React.FC<OccasionSelectorProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <span className="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-florence-800 font-semibold block mb-2">
-            ПОДБОРКА ПО НАСТРОЕНИЮ
+        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-florence-800 font-medium block mb-1.5">
+            КОЛЛЕКЦИИ ПО ПОВОДАМ
           </span>
           <h2 className="font-serif text-2xl sm:text-4xl text-florence-900 font-light text-balance">
-            Цветы для ваших особенных событий
+            Букеты под особенный повод
           </h2>
-          <div className="w-12 h-0.5 bg-gold-500/80 mx-auto mt-3 mb-3" />
-          <p className="text-xs sm:text-sm text-charcoal-600 font-light text-pretty">
-            Индивидуальные палитры под характер встречи: от камерных свиданий до представительских торжеств
+          <p className="text-xs sm:text-sm text-charcoal-500 font-light mt-1.5 text-pretty">
+            Выберите повод для точного подбора сортов, палитры и оформления
           </p>
         </div>
 

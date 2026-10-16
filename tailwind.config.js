@@ -42,9 +42,10 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Playfair Display', 'Georgia', 'serif'],
-        display: ['"Cinzel"', '"Cormorant Garamond"', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        display: ['"Tenor Sans"', '"Cormorant Garamond"', 'serif'],
+        brand: ['"Tenor Sans"', '"Cormorant Garamond"', 'serif'],
+        sans: ['"Manrope"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
       },
       letterSpacing: {
         'luxury': '0.18em',

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { X, Trash2, Phone, ShoppingBag } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import { Product, STORE_INFO } from '../data/products';
@@ -28,6 +29,15 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   onRemoveItem,
   onClearCart,
 }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const totalPrice = items.reduce((sum, item) => sum + item.pricePerUnit * item.quantity, 0);

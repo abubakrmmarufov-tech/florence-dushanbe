@@ -38,15 +38,15 @@ export const BrandStory: React.FC = () => {
           <div className="lg:col-span-7 space-y-8">
             <div>
               <span className="text-xs uppercase tracking-wider-luxury text-gold-400 font-medium block mb-3">
-                О цветочном доме Florence
+                Ателье на ул. Турсунзаде, 11
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-light text-cream-50 leading-[1.15]">
-                Европейские традиции флористики в сердце Душанбе
+                Авторская флористика в сердце Душанбе
               </h2>
             </div>
 
             <p className="text-sm sm:text-base text-cream-200/90 font-light leading-relaxed">
-              Florence — это не просто салон цветов, а пространство эстетики и вдохновения. Мы объединяем изысканный европейский подход к флористике, бережно отобранные сорта роз из Эквадора и пионов из Голландии с искренним восточным гостеприимством Таджикистана.
+              Мастерская Florence находится на улице Мирзо Турсунзаде, 11. Мы привозим в Душанбе редкие садовые сорта: французские розы White O’Hara, голландские пионы Coral Sunset и пышные гортензии. Каждый букет бережно собирается флористом вручную и отправляется в аквапаке с водой, чтобы цветы оставались свежими до момента вручения.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">

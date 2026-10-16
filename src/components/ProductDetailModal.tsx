@@ -214,11 +214,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
                 {/* Price Display */}
                 <div className="mt-2.5 flex items-baseline gap-2">
-                  <span className="font-serif text-2xl sm:text-3xl font-bold text-florence-900">
+                  <span className="font-serif text-2xl sm:text-3xl font-bold text-florence-900 tabular-nums">
                     {calculatedPrice * quantity} <span className="text-sm font-sans font-normal text-charcoal-700">сомони</span>
                   </span>
                   {quantity > 1 && (
-                    <span className="text-[11px] text-charcoal-400">
+                    <span className="text-[11px] text-charcoal-400 tabular-nums">
                       ({calculatedPrice} сомони / букет)
                     </span>
                   )}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { PRODUCTS, Product } from './data/products';
 import { Navbar } from './components/Navbar';
-import { MobileStories } from './components/MobileStories';
 import { Hero } from './components/Hero';
 import { OccasionSelector } from './components/OccasionSelector';
 import { Catalog } from './components/Catalog';
@@ -145,23 +144,12 @@ export function App() {
         searchQuery={searchQuery}
       />
 
-      {/* Mobile Instagram Stories floral category circles */}
-      <MobileStories
-        activeCategory={activeCategory}
-        onSelectCategory={handleSelectCategory}
-      />
-
       {/* Main Content with bottom padding to avoid bottom-bar collision */}
       <main className="flex-1 pb-20 lg:pb-0 overflow-x-hidden max-w-full w-full">
+        {/* Clean Editorial Hero */}
         <Hero />
 
-        {/* Occasion Selector */}
-        <OccasionSelector
-          selectedOccasion={selectedOccasion}
-          onSelectOccasion={handleSelectOccasion}
-        />
-
-        {/* Catalog */}
+        {/* Main Product Catalog — Immediate Access to Flowers */}
         <Catalog
           products={PRODUCTS}
           activeCategory={activeCategory}
@@ -173,6 +161,12 @@ export function App() {
           selectedOccasion={selectedOccasion}
           onClearOccasion={() => setSelectedOccasion(null)}
           searchQuery={searchQuery}
+        />
+
+        {/* Curated Occasion Collections */}
+        <OccasionSelector
+          selectedOccasion={selectedOccasion}
+          onSelectOccasion={handleSelectOccasion}
         />
 
         {/* Editorial Story */}

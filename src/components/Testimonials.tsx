@@ -26,14 +26,13 @@ export const Testimonials: React.FC = () => {
     <section className="py-16 sm:py-24 bg-cream-100/50 border-t border-cream-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-florence-800 font-semibold block mb-2">
-            ИСТОРИИ НАШИХ ГОСТЕЙ
+        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-florence-800 font-medium block mb-1.5">
+            ОТЗЫВЫ КЛИЕНТОВ
           </span>
           <h2 className="font-serif text-2xl sm:text-4xl text-florence-900 font-light text-balance">
             Нам доверяют особенные моменты
           </h2>
-          <div className="w-12 h-0.5 bg-gold-500/80 mx-auto mt-3" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
